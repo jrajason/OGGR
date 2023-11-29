@@ -30,7 +30,7 @@ WORKDIR /home/$USER/src
 RUN git clone --recursive https://github.com/jrajason/OGGR.git
 
 WORKDIR /home/$USER/src/gnuradio-android/thrift
-RUN git clean -fdx
+#RUN git clean -fdx
 RUN ./bootstrap.sh
 RUN ./configure --disable-tests --disable-tutorial --with-cpp --without-python --without-qt4 --without-qt5 --without-py3 --without-go --without-nodejs --without-c_glib --without-php --without-csharp --without-java --without-libevent --without-zlib
 RUN make -j $(getconf _NPROCESSORS_ONLN)

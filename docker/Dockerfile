@@ -27,7 +27,7 @@ USER $USER
 RUN mkdir -p /home/$USER/src
 WORKDIR /home/$USER/src
 
-RUN git clone --recursive https://github.com/bastibl/gnuradio-android.git
+RUN git clone --recursive https://github.com/jrajason/OGGR.git
 
 WORKDIR /home/$USER/src/gnuradio-android/thrift
 RUN git clean -xdf

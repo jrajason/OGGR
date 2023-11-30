@@ -29,7 +29,7 @@ WORKDIR /home/$USER/src
 
 RUN git clone --recursive https://github.com/jrajason/OGGR.git
 
-WORKDIR /home/$USER/src/gnuradio-android/thrift
+WORKDIR /home/$USER/src/OGGC/gnuradio-android/thrift
 RUN git clean -xdf
 RUN ./bootstrap.sh
 RUN ./configure --disable-tests --disable-tutorial --with-cpp --without-python --without-qt4 --without-qt5 --without-py3 --without-go --without-nodejs --without-c_glib --without-php --without-csharp --without-java --without-libevent --without-zlib
@@ -56,7 +56,7 @@ RUN yes | ./sdkmanager --sdk_root=${ANDROID_HOME} "build-tools;30.0.0"
 RUN yes | ./sdkmanager --sdk_root=${ANDROID_HOME} "cmake;3.10.2.4988404"
 RUN yes | ./sdkmanager --sdk_root=${ANDROID_HOME} "cmdline-tools;latest"
 
-WORKDIR /home/$USER/src/gnuradio-android
+WORKDIR /home/$USER/src/OGGC/gnuradio-android
 RUN ./build.sh
 RUN ./build_aarch64.sh
 
@@ -67,7 +67,7 @@ RUN git clone https://github.com/bastibl/android-fm.git
 #RUN git clone https://github.com/bastibl/android-hw.git
 #RUN git clone https://github.com/bastibl/android-wlan.git
 
-WORKDIR /home/$USER/src/gnuradio-android
+WORKDIR /home/$USER/src/OGGC/gnuradio-android
 
 ENTRYPOINT ["/bin/bash"]
 
